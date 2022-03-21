@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">BuyGo</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="rs">\u20B9</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="buy_go"><font color='#E91E63'>Buy</font><font color='#FF5A92'>Go</font></string>
+    <string name="search_here">Search here ...</string>
+    <string name="my_cart">My Cart</string>
+    <string name="sub_total">Sub Total</string>
+    <string name="checkout">Checkout</string>
+    <string name="delivery_charge">Delivery Charge</string>
+    <string name="tax">Tax</string>
+    <string name="there_is_some_issue_to_loading">There is some issue to loading this Page</string>
+    <string name="please_check_your_internet_connectivity">Please check your internet connectivity.</string>
+    <string name="reload">Reload</string>
+
+</resources>
