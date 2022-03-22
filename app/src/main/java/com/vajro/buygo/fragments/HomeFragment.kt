@@ -121,6 +121,7 @@ class HomeFragment : Fragment(), OnUpdateListener {
             appDatabase.cartDao().getAllCartItems().collect {
                 if (productsAdapter == null) {
                     products.map { prod ->
+                        prod.qty = 0
                         it.find { it.product_id == prod.product_id }?.let {
                             prod.qty = it.quantity
                         }

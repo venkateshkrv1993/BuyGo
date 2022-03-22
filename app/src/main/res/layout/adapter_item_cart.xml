@@ -21,6 +21,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageButton
+            android:id="@+id/btnRemove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_ripple"
+            android:padding="8dp"
+            android:src="@drawable/ic_round_delete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/pink_700"
+            tools:ignore="ContentDescription" />
+
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvProductName"
             android:layout_width="0dp"
@@ -32,7 +44,7 @@
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnRemove"
             app:layout_constraintStart_toEndOf="@id/imgProduct"
             app:layout_constraintTop_toTopOf="@id/imgProduct"
             tools:text="Name" />

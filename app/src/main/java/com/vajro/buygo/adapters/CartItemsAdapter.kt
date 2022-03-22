@@ -1,6 +1,7 @@
 package com.vajro.buygo.adapters
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -47,14 +48,24 @@ class CartItemsAdapter(
         }
 
         holder.binding.btnMinus.setOnClickListener {
-            if (products[holder.adapterPosition].quantity > 1) {
-                products[holder.adapterPosition].apply {
-                    this.quantity = this.quantity - 1
+            if (holder.adapterPosition > -1)
+                if (products[holder.adapterPosition].quantity > 1) {
+                    products[holder.adapterPosition].apply {
+                        this.quantity = this.quantity - 1
+                    }
+                    val item = products[holder.adapterPosition]
+                    holder.binding.tvQty.text = item.quantity.toString()
+                    onUpdateListener?.onUpdate(item.product_id, item.quantity)
+                } else {
+                    val item = products[holder.adapterPosition]
+                    onUpdateListener?.onUpdate(item.product_id, 0)
+                    products.removeAt(holder.adapterPosition)
+                    notifyItemRemoved(holder.adapterPosition)
                 }
-                val item = products[holder.adapterPosition]
-                holder.binding.tvQty.text = item.quantity.toString()
-                onUpdateListener?.onUpdate(item.product_id, item.quantity)
-            } else {
+        }
+
+        holder.binding.btnRemove.setOnClickListener {
+            if (holder.adapterPosition > -1) {
                 val item = products[holder.adapterPosition]
                 onUpdateListener?.onUpdate(item.product_id, 0)
                 products.removeAt(holder.adapterPosition)
