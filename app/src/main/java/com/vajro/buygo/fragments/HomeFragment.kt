@@ -130,7 +130,8 @@ class HomeFragment : Fragment(), OnUpdateListener {
                 }
                 CoroutineScope(Dispatchers.Main).launch {
                     binding.clTotal.isVisible = it.size > 0
-                    binding.tvItems.text = String.format("%d Items", it.size)
+                    binding.tvItems.isVisible = it.size > 0
+                    binding.tvItems.text = it.size.toString()
                     val total = it.sumOf { Utils.convertAmount(it.special) * it.quantity }
                     binding.tvTotal.text = String.format("Total : %s", Utils.currencyFormat(total))
                 }

@@ -61,7 +61,8 @@ class CartFragment : Fragment(), OnUpdateListener {
                     }
                 }
                 CoroutineScope(Dispatchers.Main).launch {
-                    binding.clTotal.isVisible = it.size > 0
+                    binding.imgNoImage.isVisible = it.isEmpty()
+                    binding.clTotal.isVisible = it.isNotEmpty()
                     binding.tvItems.text = String.format("Total Items : %d", it.size)
                     val total = it.sumOf { Utils.convertAmount(it.special) * it.quantity }
                     binding.tvTotal.text = String.format("Total : %s", Utils.currencyFormat(total))

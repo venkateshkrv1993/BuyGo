@@ -35,6 +35,7 @@
             android:layout_marginStart="20dp"
             android:background="@drawable/et_search_back"
             android:hint="@string/search_here"
+            android:imeOptions="flagNoExtractUi"
             android:inputType="text"
             android:maxLines="1"
             android:padding="10dp"
@@ -87,33 +88,50 @@
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <TextView
-            android:id="@+id/tvItems"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="12sp"
+        <ImageView
+            android:id="@+id/imgCart"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/bag"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="10 Items" />
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tvItems"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:background="@drawable/bg_circle_pink"
+            android:backgroundTint="@color/pink_700"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_9"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/imgCart"
+            app:layout_constraintTop_toTopOf="@id/imgCart"
+            tools:text="10" />
 
         <TextView
             android:id="@+id/tvTotal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="2dp"
             android:text="@string/rs"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvItems" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imgCart"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
             android:id="@+id/btnCheckout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_circle_pink"
+            android:backgroundTint="@color/pink_400"
             android:padding="6dp"
             android:src="@drawable/ic_round_navigate_next"
             app:layout_constraintBottom_toBottomOf="parent"
